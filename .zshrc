@@ -83,6 +83,7 @@ alias finalize='git rebase --interactive --autosquash develop'
 #alias gl='git log --pretty=format:"%Cred%h%Creset %ad | %s%d [%an]" --graph --date=short'
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gput="git push origin HEAD"
+alias gph="git push origin HEAD"
 #alias gup="git pull --rebase --stat"
 alias gu="git-up" # https://github.com/aanand/git-up
 alias ll='ls -l'

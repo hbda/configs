@@ -1,0 +1,31 @@
+[user]
+	name = Dmitry Borisov
+	email = borisov.dmitry.a@gmail.com
+[credential]
+	helper = cache --timeout=3600
+[push]
+	default = simple
+
+[merge]
+summary = true
+verbosity = 1
+tool = gvimdiff
+[mergetool]
+prompt = false
+[mergetool "gvimdiff"]
+;cmd = /usr/local/bin/gvimdiff -f "$LOCAL" "$MERGED" "$REMOTE"
+cmd = "gvim -f --nomru -c 'Gdiff' $MERGED" # use fugitive.vim for 3-way merge
+keepBackup = false
+[diff]
+;tool = default-difftool
+[difftool]
+prompt = false
+[difftool "default-difftool"]
+;cmd = gvim -d -f --nomru $LOCAL $REMOTE
+[alias]
+d = difftool
+[git-up "bundler"]
+check = true
+[core]
+autocrlf = input
+editor = gvim -f --nomru
