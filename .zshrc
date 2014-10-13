@@ -74,8 +74,7 @@ export PATH="$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 # RVM
-#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-source /home/yoda/.rvm/scripts/rvm
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 alias r='rails'
 alias g='git status'
