@@ -126,3 +126,4 @@ alias gbdf=git_delete_branch_force
 #rvm use 2.1
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 #EDITOR=/usr/local/Cellar/macvim/7.3-65/MacVim.app/Contents/MacOS/MacVim
+PATH="/usr/local/share/npm/bin:$PATH"
