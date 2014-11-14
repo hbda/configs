@@ -92,6 +92,14 @@ alias update='git add -A && git commit -m "updates"'
 alias bugfix='git add -A && git commit -m "bugfixes"'
 #alias deploy='git push origin master && git push origin develop && cap deploy'
 #alias deploy='git push origin develop && cap production deploy'
+
+# Heroku
+alias hgph="git push heroku master"
+alias ho="heroku open"
+alias hmigrate="heroku run rake db:migrate"
+alias hrc="heroku run rails console"
+
+
 fpath=(path/to/zsh-completions/src $fpath)
 zstyle ':completion:*:processes' command 'ps -ax'
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;32'
