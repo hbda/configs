@@ -39,7 +39,7 @@ CASE_SENSITIVE="true"
 # much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment following line if you want to the command execution time stamp shown 
+# Uncomment following line if you want to the command execution time stamp shown
 # in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # HIST_STAMPS="mm/dd/yyyy"
@@ -47,6 +47,7 @@ CASE_SENSITIVE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
+# plugins=(rails ruby bundler capistrano gem zeus rvm ssh-agent rake command-not-found compleat composer cp history history-substring-search git-remote-branch git git-flow git-extras github)
 plugins=(rails ruby bundler capistrano gem osx zeus rvm ssh-agent rake brew command-not-found compleat composer cp history history-substring-search git-remote-branch git git-flow git-extras github pow)
 
 HISTSIZE=100000
@@ -76,6 +77,7 @@ export PATH="$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
+alias gv='env -u GEM_PATH -u GEM_HOME gvim'
 alias r='rails'
 alias g='git status'
 alias finalize='git rebase --interactive --autosquash develop'
@@ -99,6 +101,8 @@ alias ho="heroku open"
 alias hmigrate="heroku run rake db:migrate"
 alias hrc="heroku run rails console"
 
+# Android
+alias emul="emulator -avd my_test_android -noaudio -qemu -enable-kvm"
 
 fpath=(path/to/zsh-completions/src $fpath)
 zstyle ':completion:*:processes' command 'ps -ax'
@@ -131,8 +135,15 @@ alias gbd=git_delete_branch
 alias gbdf=git_delete_branch_force
 #alias mvim=/usr/local/Cellar/macvim/7.3-65/MacVim.app/Contents/MacOS/MacVim
 #source ~/.profile
-#rvm use 2.1
 #EDITOR=/usr/local/Cellar/macvim/7.3-65/MacVim.app/Contents/MacOS/MacVim
 #PATH="$PATH:usr/local/share/npm/bin"
+export JAVA_HOME=/usr/lib/jvm/default-java
+export CLASSPATH=${JAVA_HOME}/lib/tools.jar
 
+export ANDROID_HOME=${HOME}/android-sdk-linux
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+
+# BEGIN Ruboto setup
+source ~/.rubotorc
+# END Ruboto setup

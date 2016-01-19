@@ -28,4 +28,4 @@ d = difftool
 check = true
 [core]
 autocrlf = input
-editor = gvim -f --nomru
+editor = gvim -f
