@@ -1,0 +1,50 @@
+[user]
+	email = scorpion061181@gmail.com
+	name = dborisov
+[push]
+	default = current
+
+[credential]
+  helper = osxkeychain
+
+[merge]
+  summary = true
+  verbosity = 1
+  tool = gvimdiff ;mvimdiff
+  conflictstyle = diff3
+  prompt = false
+  keepBackup = false
+
+[mergetool]
+  prompt = false
+
+[mergetool "gvimdiff"]
+  prompt = false
+  keepBackup = false
+
+[mergetool "mvimdiff"]
+  ;cmd = /usr/local/bin/mvimdiff -f "$LOCAL" "$MERGED" "$REMOTE"
+  cmd = "mvim -f --nomru -c 'Gdiff' $MERGED" # use fugitive.vim for 3-way merge
+  keepBackup = false
+  ;cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+  ;trustExitCode = true
+
+[diff]
+  tool = default-difftool
+
+[difftool]
+  prompt = false
+
+[difftool "default-difftool"]
+  ;cmd = mvim -d -f --nomru $LOCAL $REMOTE
+  cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$LOCAL\" \"$REMOTE\"
+
+[alias]
+  d = difftool
+
+[git-up "bundler"]
+  check = true
+
+[core]
+  autocrlf = input
+  editor = mvim -f --nomru
