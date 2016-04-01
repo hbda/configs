@@ -57,7 +57,7 @@ CASE_SENSITIVE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(rails ruby bundler capistrano gem osx zeus rvm ssh-agent rake brew command-not-found compleat composer cp history history-substring-search git-remote-branch git git-flow git-extras github pow)
+plugins=(rails ruby bundler capistrano gem osx zeus ssh-agent rake brew rbenv command-not-found compleat composer cp history history-substring-search git-remote-branch git git-flow git-extras github pow)
 
 HISTSIZE=100000
 HISTFILESIZE=200000
@@ -82,13 +82,8 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/bin
 PATH="$PATH:/usr/local/sbin"
-
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-#source /home/dmborisov/.rvm/scripts/rvm
 
 myfind() {
   find . -type f \( -name "*.rb" -or -name "*.erb" -or -name "*.rss" -or -name "*.xml" -or -name "*.slim" -or -name "*.haml" -or -name "*.js" -or -name "*.coffee" -or -name "*.ejs" -or -name "*.jst" -or -name "*.eco" -or -name "*.css" -or -name "*.sass" -or -name "*.scss" -or -name "*.yml" -or -name "*.vim" -or -name "*.rabl" -or -name "*.builder"  -or -name "*.txt" \)  -exec grep -l "$1" {} \;
@@ -146,10 +141,15 @@ alias deploy='sdeploy && pdeploy'
 alias uptimus='cd ~/Projects/uptimus'
 alias pumba='cd ~/Projects/pumba'
 alias nala='cd ~/Projects/nala'
-alias judge='cd ~/Projects/judge'
-alias houston='cd ~/Projects/houston'
+alias pluto='cd ~/Projects/plutonium'
 alias sidekiq='bundle exec sidekiq --config ./config/sidekiq.yml'
 
 export SEED_REGIONS='true'
 export NOT_AUTO_MIGRATE='true'
 export GUARD_NOTIFICATION='true'
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# Rbenv
+export RBENV_ROOT=$HOME/.rbenv
+eval "$(rbenv init -)"
