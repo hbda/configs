@@ -84,6 +84,7 @@ source $ZSH/oh-my-zsh.sh
 
 PATH=$PATH:$HOME/bin
 PATH="$PATH:/usr/local/sbin"
+PATH="/opt/chefdk/bin:$PATH"
 
 myfind() {
   find . -type f \( -name "*.rb" -or -name "*.erb" -or -name "*.rss" -or -name "*.xml" -or -name "*.slim" -or -name "*.haml" -or -name "*.js" -or -name "*.coffee" -or -name "*.ejs" -or -name "*.jst" -or -name "*.eco" -or -name "*.css" -or -name "*.sass" -or -name "*.scss" -or -name "*.yml" -or -name "*.vim" -or -name "*.rabl" -or -name "*.builder"  -or -name "*.txt" \)  -exec grep -l "$1" {} \;
@@ -133,15 +134,12 @@ alias gbclear=git_branches_clear
 alias caravan="ssh devops@94.77.64.80"
 alias linode="ssh devops@176.58.123.252"
 alias nostradamus='ssh devops@176.58.113.204'
-alias pdeploy='git push && cap production deploy'
-alias sdeploy='git push && cap staging deploy'
-alias s2deploy='git push && cap staging2 deploy'
-alias deploy='sdeploy && pdeploy'
 
 alias uptimus='cd ~/Projects/uptimus'
 alias pumba='cd ~/Projects/pumba'
 alias nala='cd ~/Projects/nala'
 alias pluto='cd ~/Projects/plutonium'
+alias builder='cd ~/Projects/reenter_builder'
 alias sidekiq='bundle exec sidekiq --config ./config/sidekiq.yml'
 
 export SEED_REGIONS='true'
@@ -153,3 +151,20 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # Rbenv
 export RBENV_ROOT=$HOME/.rbenv
 eval "$(rbenv init -)"
+
+#-------------------------------------------------------------------------------
+# change colorscheme of terminal on ssh connect
+#-------------------------------------------------------------------------------
+function tabc() {
+  NAME=$1; if [ -z "$NAME" ]; then NAME="Default"; fi # if you have trouble with this, change
+                                                      # "Default" to the name of your default theme
+  echo -e "\033]50;SetProfile=$NAME\a"
+}
+
+function colorssh() {
+  tabc SSH
+  ssh $*
+  tabc
+}
+
+alias ssh="colorssh"
