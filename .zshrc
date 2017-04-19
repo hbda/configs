@@ -135,11 +135,8 @@ alias caravan="ssh devops@94.77.64.80"
 alias linode="ssh devops@176.58.123.252"
 alias nostradamus='ssh devops@176.58.113.204'
 
-alias uptimus='cd ~/Projects/uptimus'
-alias pumba='cd ~/Projects/pumba'
-alias nala='cd ~/Projects/nala'
-alias pluto='cd ~/Projects/plutonium'
-alias builder='cd ~/Projects/reenter_builder'
+alias pumba='cd ~/projects/work/pumba'
+alias feed='cd ~/projects/work/reenter_feed'
 alias sidekiq='bundle exec sidekiq --config ./config/sidekiq.yml'
 
 export SEED_REGIONS='true'
