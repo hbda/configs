@@ -85,6 +85,7 @@ source $ZSH/oh-my-zsh.sh
 PATH=$PATH:$HOME/bin
 PATH="$PATH:/usr/local/sbin"
 PATH="/opt/chefdk/bin:$PATH"
+PATH="$PATH:/Users/yoda/Programs/elasticsearch-1.4.2/bin"
 
 myfind() {
   find . -type f \( -name "*.rb" -or -name "*.erb" -or -name "*.rss" -or -name "*.xml" -or -name "*.slim" -or -name "*.haml" -or -name "*.js" -or -name "*.coffee" -or -name "*.ejs" -or -name "*.jst" -or -name "*.eco" -or -name "*.css" -or -name "*.sass" -or -name "*.scss" -or -name "*.yml" -or -name "*.vim" -or -name "*.rabl" -or -name "*.builder"  -or -name "*.txt" \)  -exec grep -l "$1" {} \;
@@ -135,6 +136,7 @@ alias caravan="ssh devops@94.77.64.80"
 alias linode="ssh devops@176.58.123.252"
 alias nostradamus='ssh devops@176.58.113.204'
 
+alias insales='cd ~/projects/work/insales/insales'
 alias pumba='cd ~/projects/work/pumba'
 alias feed='cd ~/projects/work/reenter_feed'
 alias sidekiq='bundle exec sidekiq --config ./config/sidekiq.yml'
