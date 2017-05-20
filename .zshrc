@@ -137,8 +137,8 @@ alias linode="ssh devops@176.58.123.252"
 alias nostradamus='ssh devops@176.58.113.204'
 
 alias insales='cd ~/projects/work/insales/insales'
-alias pumba='cd ~/projects/work/pumba'
-alias feed='cd ~/projects/work/reenter_feed'
+alias pumba='cd ~/projects/work/ingate/pumba'
+alias feed='cd ~/projects/work/ingate/reenter_feed'
 alias sidekiq='bundle exec sidekiq --config ./config/sidekiq.yml'
 
 export SEED_REGIONS='true'
