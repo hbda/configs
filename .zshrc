@@ -86,6 +86,7 @@ PATH=$PATH:$HOME/bin
 PATH="$PATH:/usr/local/sbin"
 PATH="/opt/chefdk/bin:$PATH"
 PATH="$PATH:/Users/yoda/Programs/elasticsearch-1.4.2/bin"
+PATH="$PATH:/usr/local/opt/postgresql@9.6/bin"
 
 myfind() {
   find . -type f \( -name "*.rb" -or -name "*.erb" -or -name "*.rss" -or -name "*.xml" -or -name "*.slim" -or -name "*.haml" -or -name "*.js" -or -name "*.coffee" -or -name "*.ejs" -or -name "*.jst" -or -name "*.eco" -or -name "*.css" -or -name "*.sass" -or -name "*.scss" -or -name "*.yml" -or -name "*.vim" -or -name "*.rabl" -or -name "*.builder"  -or -name "*.txt" \)  -exec grep -l "$1" {} \;
@@ -93,8 +94,8 @@ myfind() {
 alias f=myfind
 
 alias r='rails'
-alias migrate='rake db:migrate && rake db:migrate RAILS_ENV=test'
-alias rollback='rake db:rollback && rake db:rollback RAILS_ENV=test'
+alias migrate='bundle exec rake db:migrate && bundle exec rake db:migrate RAILS_ENV=test'
+alias rollback='bundle exec rake db:rollback && bundle exec rake db:rollback RAILS_ENV=test'
 alias g='git status'
 alias gd='git diff head --color'
 alias finalize='git rebase --interactive --autosquash develop'
@@ -103,21 +104,15 @@ alias gph="git push origin HEAD"
 alias gu="git-up" # https://github.com/aanand/git-up
 alias gm='git merge --no-ff'
 
-fpath=(path/to/zsh-completions/src $fpath)
-zstyle ':completion:*:processes' command 'ps -ax'
-zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;32'
-zstyle ':completion:*:*:kill:*' menu yes select
-zstyle ':completion:*:kill:*'   force-list always
-
-zstyle ':completion:*:processes-names' command 'ps -e -o comm='
-zstyle ':completion:*:*:killall:*' menu yes select
-zstyle ':completion:*:killall:*'   force-list always
-
-git_commit_m() {
-  git add -A && git commit -m "$1"
-}
-alias gcm=git_commit_m
-alias gcma='git commit -a --amend --no-edit'
+# git_commit_m() {
+#   git add -A && git commit -m "$1"
+# }
+# alias gcm=git_commit_m
+# alias gcma='git commit -a --amend --no-edit'
+# alias gaa='git add -A'
+# alias grb='git rebase -i'
+alias gst='gaa && git stash'
+alias gstp='git stash pop'
 
 git_delete_branch() {
   git branch -d $1 && git push origin :$1
@@ -140,6 +135,16 @@ alias insales='cd ~/projects/work/insales/insales'
 alias pumba='cd ~/projects/work/ingate/pumba'
 alias feed='cd ~/projects/work/ingate/reenter_feed'
 alias sidekiq='bundle exec sidekiq --config ./config/sidekiq.yml'
+
+fpath=(path/to/zsh-completions/src $fpath)
+zstyle ':completion:*:processes' command 'ps -ax'
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;32'
+zstyle ':completion:*:*:kill:*' menu yes select
+zstyle ':completion:*:kill:*'   force-list always
+
+zstyle ':completion:*:processes-names' command 'ps -e -o comm='
+zstyle ':completion:*:*:killall:*' menu yes select
+zstyle ':completion:*:killall:*'   force-list always
 
 export SEED_REGIONS='true'
 export NOT_AUTO_MIGRATE='true'
@@ -167,3 +172,6 @@ function colorssh() {
 }
 
 alias ssh="colorssh"
+
+# Init letsdev
+alias init_letsdev="cd ~/projects/work/insales/ && . _letsdev2/env.sh"
