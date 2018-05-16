@@ -158,6 +158,7 @@ eval "$(rbenv init -)"
 
 #-------------------------------------------------------------------------------
 # change colorscheme of terminal on ssh connect
+# https://gist.github.com/pablete/5871811
 #-------------------------------------------------------------------------------
 function tabc() {
   NAME=$1; if [ -z "$NAME" ]; then NAME="Default"; fi # if you have trouble with this, change
