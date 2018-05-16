@@ -57,7 +57,7 @@ CASE_SENSITIVE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(rails ruby bundler capistrano gem osx ssh-agent rake rbenv compleat cp history git)
+plugins=(rails ruby bundler capistrano gem osx ssh-agent rake rbenv compleat cp history git docker)
 
 HISTSIZE=100000
 HISTFILESIZE=200000
