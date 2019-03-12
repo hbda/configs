@@ -57,7 +57,7 @@ CASE_SENSITIVE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(rails ruby bundler capistrano gem osx ssh-agent rake rbenv compleat cp history git docker)
+plugins=(rails ruby bundler capistrano gem osx ssh-agent rake rbenv compleat cp history git docker alias-tips)
 
 HISTSIZE=100000
 HISTFILESIZE=200000
@@ -175,4 +175,6 @@ function colorssh() {
 alias ssh="colorssh"
 
 # Init letsdev
-alias init_letsdev="cd ~/projects/work/insales/ && . _letsdev2/env.sh"
+export LETSDEV_REPO=/Users/dborisov/projects/work/insales/letsdev2
+alias letsdev=$LETSDEV_REPO/letsdev.rb
+# . $LETSDEV_REPO/bash-completions
