@@ -153,6 +153,7 @@ export GUARD_NOTIFICATION='true'
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 function run_webpack_dev_server() {
+  docker-compose stop ins_webpacker
   yarn
   ./bin/webpack-dev-server
 }
