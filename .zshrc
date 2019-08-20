@@ -135,6 +135,7 @@ alias insales='cd ~/projects/work/insales/insales'
 alias pumba='cd ~/projects/work/ingate/pumba'
 alias feed='cd ~/projects/work/ingate/reenter_feed'
 alias sidekiq='bundle exec sidekiq --config ./config/sidekiq.yml'
+alias minisklad='cd ~/projects/work/blackchestnut/minisklad'
 
 fpath=(path/to/zsh-completions/src $fpath)
 zstyle ':completion:*:processes' command 'ps -ax'
