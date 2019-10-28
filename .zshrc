@@ -180,3 +180,4 @@ alias ssh="colorssh"
 export LETSDEV_REPO=/Users/dborisov/projects/work/insales/letsdev2
 alias letsdev=$LETSDEV_REPO/letsdev.rb
 # . $LETSDEV_REPO/bash-completions
+export PATH="/usr/local/opt/node@10/bin:$PATH"
