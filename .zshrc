@@ -86,7 +86,7 @@ PATH=$PATH:$HOME/bin
 PATH="$PATH:/usr/local/sbin"
 PATH="/opt/chefdk/bin:$PATH"
 PATH="$PATH:/Users/yoda/Programs/elasticsearch-1.4.2/bin"
-PATH="$PATH:/usr/local/opt/postgresql@9.6/bin"
+PATH="/usr/local/opt/postgresql@11/bin:$PATH"
 
 myfind() {
   find . -type f \( -name "*.rb" -or -name "*.erb" -or -name "*.rss" -or -name "*.xml" -or -name "*.slim" -or -name "*.haml" -or -name "*.js" -or -name "*.coffee" -or -name "*.ejs" -or -name "*.jst" -or -name "*.eco" -or -name "*.css" -or -name "*.sass" -or -name "*.scss" -or -name "*.yml" -or -name "*.vim" -or -name "*.rabl" -or -name "*.builder"  -or -name "*.txt" \)  -exec grep -l "$1" {} \;
@@ -181,3 +181,4 @@ export LETSDEV_REPO=/Users/dborisov/projects/work/insales/letsdev2
 alias letsdev=$LETSDEV_REPO/letsdev.rb
 # . $LETSDEV_REPO/bash-completions
 export PATH="/usr/local/opt/node@10/bin:$PATH"
+export GOPATH="/Users/dborisov/projects/go"
