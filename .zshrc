@@ -65,6 +65,12 @@ TERM="xterm-256color"
 
 source $ZSH/oh-my-zsh.sh
 
+# key bindings
+bindkey '^[[1;2D' beginning-of-line
+bindkey '^[[1;2C' end-of-line
+bindkey '^[^[[D' backward-word
+bindkey '^[^[[C' forward-word
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
