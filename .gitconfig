@@ -48,3 +48,7 @@
 [core]
   autocrlf = input
   editor = mvim -f --nomru
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[commit]
+	gpgsign = true
