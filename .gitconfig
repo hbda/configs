@@ -1,6 +1,7 @@
 [user]
 	email = borisov.dmitry.a@gmail.com
 	name = Dmitry Borisov
+	signingkey = 74B17724C5F64EDD
 [push]
 	default = current
 
@@ -47,7 +48,7 @@
 
 [core]
   autocrlf = input
-  editor = mvim -f --nomru
+  editor = gvim -f
 [url "git@github.com:"]
 	insteadOf = https://github.com/
 [commit]
