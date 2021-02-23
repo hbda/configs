@@ -188,4 +188,4 @@ alias letsdev=$LETSDEV_REPO/letsdev.rb
 # . $LETSDEV_REPO/bash-completions
 export PATH="/usr/local/opt/node@10/bin:$PATH"
 export GOPATH="/Users/dborisov/projects/go"
-export GPGTTY=$(tty)
+export GPG_TTY=$(tty)
