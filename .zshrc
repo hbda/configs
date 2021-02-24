@@ -183,9 +183,9 @@ function colorssh() {
 alias ssh="colorssh"
 
 # Init letsdev
-export LETSDEV_REPO=/Users/dborisov/projects/work/insales/letsdev2
+export LETSDEV_REPO=$HOME/projects/work/insales/letsdev2
 alias letsdev=$LETSDEV_REPO/letsdev.rb
 # . $LETSDEV_REPO/bash-completions
 export PATH="/usr/local/opt/node@10/bin:$PATH"
-export GOPATH="/Users/dborisov/projects/go"
+export GOPATH="$HOME/projects/go"
 export GPG_TTY=$(tty)
