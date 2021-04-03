@@ -188,3 +188,12 @@ alias letsdev=$LETSDEV_REPO/letsdev.rb
 # . $LETSDEV_REPO/bash-completions
 export PATH="/usr/local/opt/node@10/bin:$PATH"
 export GOPATH="/Users/dborisov/projects/go"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#determines search program for fzf
+#refer rg over ag
+if type rg &> /dev/null; then
+    export FZF_DEFAULT_COMMAND='rg --files --hidden'
+elif type ag &> /dev/null; then
+    export FZF_DEFAULT_COMMAND='ag -p ~/.gitignore -g ""'
+fi
