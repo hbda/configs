@@ -193,7 +193,7 @@ export GOPATH="/Users/dborisov/projects/go"
 #determines search program for fzf
 #refer rg over ag
 if type rg &> /dev/null; then
-    export FZF_DEFAULT_COMMAND='rg --files --hidden'
+    export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!.git"'
 elif type ag &> /dev/null; then
     export FZF_DEFAULT_COMMAND='ag -p ~/.gitignore -g ""'
 fi
