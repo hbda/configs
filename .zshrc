@@ -159,7 +159,7 @@ export GUARD_NOTIFICATION='true'
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-alias wds="docker-compose stop ins-webpacker && yarn && ./bin/webpack-dev-server"
+alias wds="docker-compose stop webpacker && docker-compose stop insales && yarn && ./bin/webpack-dev-server"
 
 # Rbenv
 export RBENV_ROOT=$HOME/.rbenv
