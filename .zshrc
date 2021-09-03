@@ -188,6 +188,7 @@ alias letsdev=$LETSDEV_REPO/letsdev.rb
 # . $LETSDEV_REPO/bash-completions
 export PATH="/usr/local/opt/node@10/bin:$PATH"
 export GOPATH="/Users/dborisov/projects/go"
+export PATH="$PATH:$GOPATH/bin"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 #determines search program for fzf
