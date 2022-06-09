@@ -62,6 +62,7 @@ plugins=(rails ruby bundler capistrano gem macos ssh-agent rake rbenv compleat c
 HISTSIZE=100000
 HISTFILESIZE=200000
 TERM="xterm-256color"
+export TERM=xterm-256color
 
 source $ZSH/oh-my-zsh.sh
 
@@ -91,7 +92,6 @@ bindkey '^[^[[C' forward-word
 PATH=$PATH:$HOME/bin
 PATH="$PATH:/usr/local/sbin"
 PATH="/opt/chefdk/bin:$PATH"
-PATH="$PATH:/Users/yoda/Programs/elasticsearch-1.4.2/bin"
 PATH="/usr/local/opt/postgresql@11/bin:$PATH"
 
 myfind() {
@@ -103,7 +103,7 @@ alias r='rails'
 alias migrate='bundle exec rake db:migrate && bundle exec rake db:migrate RAILS_ENV=test'
 alias rollback='bundle exec rake db:rollback && bundle exec rake db:rollback RAILS_ENV=test'
 alias g='git status'
-alias gd='git diff head --color'
+alias gd='git diff HEAD --color'
 alias finalize='git rebase --interactive --autosquash develop'
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%d%Creset %s - %C(bold blue)%an%Creset, %Cgreen%cr' --abbrev-commit"
 alias gph="git push origin HEAD"
@@ -183,11 +183,11 @@ function colorssh() {
 alias ssh="colorssh"
 
 # Init letsdev
-export LETSDEV_REPO=/Users/dborisov/projects/work/insales/letsdev2
+export LETSDEV_REPO=$HOME/projects/work/insales/letsdev2
 alias letsdev=$LETSDEV_REPO/letsdev.rb
 # . $LETSDEV_REPO/bash-completions
 export PATH="/usr/local/opt/node@10/bin:$PATH"
-export GOPATH="/Users/dborisov/projects/go"
+export GOPATH="$HOME/projects/go"
 export PATH="$PATH:$GOPATH/bin"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
