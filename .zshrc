@@ -200,3 +200,5 @@ elif type ag &> /dev/null; then
 fi
 export PATH="/opt/homebrew/opt/node@14/bin:$PATH"
 export PATH="/opt/homebrew/opt/imagemagick@6/bin:$PATH"
+
+alias test="OBJC_DISABLE_INITIALIZE_FORK_SAFETY=NO rspec"
