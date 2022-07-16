@@ -190,15 +190,26 @@ export PATH="/usr/local/opt/node@10/bin:$PATH"
 export GOPATH="$HOME/projects/go"
 export PATH="$PATH:$GOPATH/bin"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 #determines search program for fzf
 #refer rg over ag
 if type rg &> /dev/null; then
-    export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!.git"'
+  export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!.git"'
 elif type ag &> /dev/null; then
-    export FZF_DEFAULT_COMMAND='ag -p ~/.gitignore -g ""'
+  export FZF_DEFAULT_COMMAND='ag -p ~/.gitignore -g ""'
 fi
-export PATH="/opt/homebrew/opt/node@14/bin:$PATH"
-export PATH="/opt/homebrew/opt/imagemagick@6/bin:$PATH"
 
-alias test="OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES DISABLE_SPRING=1 rspec"
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  source /usr/share/doc/fzf/examples/key-bindings.zsh
+  source /usr/share/doc/fzf/examples/completion.zsh
+
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+  # Mac OSX
+
+  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+  export PATH="/opt/homebrew/opt/node@14/bin:$PATH"
+  export PATH="/opt/homebrew/opt/imagemagick@6/bin:$PATH"
+  alias test="OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES DISABLE_SPRING=1 rspec"
+
+else
+        # Unknown.
+fi
