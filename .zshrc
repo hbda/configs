@@ -208,7 +208,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
   export PATH="/opt/homebrew/opt/node@14/bin:$PATH"
   export PATH="/opt/homebrew/opt/imagemagick@6/bin:$PATH"
-  alias test="OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES DISABLE_SPRING=1 rspec"
+  alias spec="OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES DISABLE_SPRING=1 rspec"
 
 else
         # Unknown.
