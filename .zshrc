@@ -161,10 +161,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 alias wds="docker-compose stop webpacker && yarn && ./bin/webpack-dev-server"
 
-# Rbenv
-export RBENV_ROOT=$HOME/.rbenv
-eval "$(rbenv init -)"
-
 #-------------------------------------------------------------------------------
 # change colorscheme of terminal on ssh connect
 # https://gist.github.com/pablete/5871811
@@ -209,7 +205,12 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   export PATH="/opt/homebrew/opt/node@14/bin:$PATH"
   export PATH="/opt/homebrew/opt/imagemagick@6/bin:$PATH"
   alias spec="OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES DISABLE_SPRING=1 rspec"
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 
 else
         # Unknown.
 fi
+
+# Rbenv
+export RBENV_ROOT=$HOME/.rbenv
+eval "$(rbenv init -)"
