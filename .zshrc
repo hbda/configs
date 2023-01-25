@@ -111,6 +111,7 @@ alias gm='git merge --no-ff'
 
 alias gst='gaa && git stash'
 alias gstp='git stash pop'
+alias dupb='docker compose stop && docker compose up -d --build'
 
 git_delete_branch() {
   git branch -d $1 && git push origin :$1
