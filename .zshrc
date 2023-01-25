@@ -57,7 +57,7 @@ CASE_SENSITIVE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(rails ruby bundler capistrano gem macos ssh-agent rake rbenv compleat cp history git docker alias-tips)
+plugins=(rails ruby bundler gem macos ssh-agent rake rbenv compleat cp history git docker alias-tips)
 
 HISTSIZE=100000
 HISTFILESIZE=200000
@@ -107,16 +107,8 @@ alias gd='git diff HEAD --color'
 alias finalize='git rebase --interactive --autosquash develop'
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%d%Creset %s - %C(bold blue)%an%Creset, %Cgreen%cr' --abbrev-commit"
 alias gph="git push origin HEAD"
-alias gu="git-up" # https://github.com/aanand/git-up
 alias gm='git merge --no-ff'
 
-# git_commit_m() {
-#   git add -A && git commit -m "$1"
-# }
-# alias gcm=git_commit_m
-# alias gcma='git commit -a --amend --no-edit'
-# alias gaa='git add -A'
-# alias grb='git rebase -i'
 alias gst='gaa && git stash'
 alias gstp='git stash pop'
 
@@ -132,10 +124,6 @@ git_branches_clear() {
 alias gbd=git_delete_branch
 alias gbdf=git_delete_branch_force
 alias gbclear=git_branches_clear
-
-alias caravan="ssh devops@94.77.64.80"
-alias linode="ssh devops@176.58.123.252"
-alias nostradamus='ssh devops@176.58.113.204'
 
 alias insales='cd ~/projects/work/insales/insales'
 alias pumba='cd ~/projects/work/ingate/pumba'
