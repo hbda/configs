@@ -175,14 +175,6 @@ export PATH="/usr/local/opt/node@10/bin:$PATH"
 export GOPATH="$HOME/projects/go"
 export PATH="$PATH:$GOPATH/bin"
 
-#determines search program for fzf
-#refer rg over ag
-if type rg &> /dev/null; then
-  export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!.git"'
-elif type ag &> /dev/null; then
-  export FZF_DEFAULT_COMMAND='ag -p ~/.gitignore -g ""'
-fi
-
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   source /usr/share/doc/fzf/examples/key-bindings.zsh
   source /usr/share/doc/fzf/examples/completion.zsh
@@ -198,6 +190,14 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 
 else
         # Unknown.
+fi
+
+#determines search program for fzf
+#refer rg over ag
+if type rg &> /dev/null; then
+  export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!.git"'
+elif type ag &> /dev/null; then
+  export FZF_DEFAULT_COMMAND='ag -p ~/.gitignore -g ""'
 fi
 
 # Rbenv
