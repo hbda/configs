@@ -92,7 +92,7 @@ bindkey '^[^[[C' forward-word
 PATH=$PATH:$HOME/bin
 PATH="$PATH:/usr/local/sbin"
 PATH="/opt/chefdk/bin:$PATH"
-PATH="/opt/homebrew/Cellar/postgresql@16/16.1_3/bin:$PATH"
+PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 
 myfind() {
   find . -type f \( -name "*.rb" -or -name "*.erb" -or -name "*.rss" -or -name "*.xml" -or -name "*.slim" -or -name "*.haml" -or -name "*.js" -or -name "*.coffee" -or -name "*.ejs" -or -name "*.jst" -or -name "*.eco" -or -name "*.css" -or -name "*.sass" -or -name "*.scss" -or -name "*.yml" -or -name "*.vim" -or -name "*.rabl" -or -name "*.builder"  -or -name "*.txt" \)  -exec grep -l "$1" {} \;
